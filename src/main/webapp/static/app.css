@@ -1,0 +1,62 @@
+:root {
+    --bg: #0b1220; --card: #131e35; --border: #22304d; --text: #e6edf7; --muted: #8a9bb8;
+    --cyan: #22d3ee; --red: #ef4444; --orange: #f97316; --green: #22c55e; --amber: #f59e0b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 "Segoe UI", system-ui, sans-serif; }
+a { color: var(--cyan); }
+.topbar { display: flex; gap: 24px; align-items: center; padding: 12px 20px; background: #0f182b; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.brand { font-size: 20px; font-weight: 700; }
+.brand-b { color: var(--cyan); }
+.tag { font-size: 11px; color: var(--muted); margin-left: 10px; text-transform: uppercase; letter-spacing: .06em; }
+nav { display: flex; gap: 16px; }
+nav a { text-decoration: none; }
+.who { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.notice { margin: 0; padding: 6px 20px; font-size: 12px; color: var(--muted); background: #0d1628; }
+main { padding: 20px; }
+main.split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+main.login { display: flex; justify-content: center; padding-top: 60px; }
+@media (max-width: 900px) { main.split { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+.narrow { width: min(420px, 100%); }
+h1 { font-size: 22px; margin: 6px 0 10px; }
+h2 { font-size: 16px; margin: 18px 0 8px; }
+.muted { color: var(--muted); }
+.mono { font-family: Consolas, monospace; font-size: 12px; }
+.lead { font-size: 15px; }
+label { display: block; margin: 10px 0; color: var(--muted); }
+input, select { width: 100%; margin-top: 4px; padding: 8px 10px; border-radius: 7px; border: 1px solid #2a3a5c; background: #0d1628; color: var(--text); }
+button { padding: 8px 14px; border-radius: 7px; border: 1px solid #2f4166; background: #1b2a47; color: var(--text); cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.primary { background: #0ea5c6; color: #04121a; font-weight: 700; border-color: #22d3ee88; }
+button.warn { background: #3a2410; color: #fdba74; border-color: #f97316aa; }
+button.ghost { background: transparent; color: var(--muted); }
+form.inline { display: inline; }
+form.row { display: flex; gap: 8px; margin-top: 10px; }
+form.row input, form.row select { margin-top: 0; }
+.filters { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.filters input { flex: 1 1 260px; width: auto; margin-top: 0; }
+.filters select { width: auto; margin-top: 0; }
+table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+th { text-align: left; font-size: 11px; color: var(--muted); text-transform: uppercase; padding: 8px 10px; background: #101a2e; }
+td { padding: 8px 10px; border-top: 1px solid #1b2742; }
+tr.critical td { background: #2a1219; }
+.badge { padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; background: #24324f; }
+.badge.CRITICAL { background: #4c0f14; color: #fecaca; } .badge.HIGH { background: #45200c; color: #fdba74; }
+.badge.MODERATE, .badge.QUEUED { background: #3a2c0d; color: #fcd34d; } .badge.LOW, .badge.SENT { background: #13314f; color: #93c5fd; }
+.badge.DELIVERED { background: #0d3324; color: #86efac; } .badge.ACKNOWLEDGED { background: #123a2c; color: #6ee7b7; }
+.badge.RESOLVED { background: #1f2a44; color: #a5b4fc; } .badge.FAILED { background: #3f1215; color: #fca5a5; }
+.kpis { display: flex; gap: 12px; }
+.kpi { background: var(--card); border: 1px solid #7f1d1d; border-radius: 10px; padding: 10px 16px; min-width: 150px; }
+.kpi span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; }
+.kpi strong { font-size: 24px; color: #fca5a5; }
+dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.flash { padding: 10px 14px; border-radius: 8px; margin: 12px 20px 0; }
+main .flash { margin: 10px 0; }
+.flash.ok { background: #0d3324; color: #86efac; }
+.flash.error { background: #3f1215; color: #fca5a5; }
+.trail { list-style: none; padding: 0; max-height: 420px; overflow: auto; }
+.trail li { padding: 6px 0; border-top: 1px solid #1b2742; font-size: 13px; }
+.trail li.WARN strong { color: #fcd34d; } .trail li.ERROR strong { color: #fca5a5; }

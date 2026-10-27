@@ -1,0 +1,23 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<header class="topbar">
+    <div class="brand"><span class="brand-a">Praan</span><span class="brand-b">-Setu</span>
+        <span class="tag">Responder web console</span></div>
+    <c:if test="${not empty me}">
+        <nav>
+            <a href="${pageContext.request.contextPath}/app/alerts">SOS alerts</a>
+            <a href="${pageContext.request.contextPath}/app/messages">Message history</a>
+        </nav>
+        <div class="who">
+            <span><c:out value="${me.fullName()}"/></span>
+            <span class="muted"><c:out value="${me.organization()}"/></span>
+            <form method="post" action="${pageContext.request.contextPath}/logout" class="inline">
+                <input type="hidden" name="csrf" value="<c:out value='${csrf}'/>">
+                <button type="submit" class="ghost">Log out</button>
+            </form>
+        </div>
+    </c:if>
+</header>
+<p class="notice">Optional online console. Offline mesh delivery runs in the desktop application and never depends on this server.</p>
+<c:if test="${not empty flash}">
+    <div class="${flashError ? 'flash error' : 'flash ok'}"><c:out value="${flash}"/></div>
+</c:if>

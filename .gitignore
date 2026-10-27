@@ -1,0 +1,12 @@
+target/
+*.war
+*.db
+*.db-wal
+*.db-shm
+*.log
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+.vscode/
